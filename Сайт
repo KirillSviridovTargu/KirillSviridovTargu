@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Мой сайт</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#1a0f0a,#0a1a2f);
+  font-family:Arial;
+  color:white;
+  overflow:hidden;
+}
+
+.container{
+  text-align:center;
+}
+
+h1{
+  font-size:28px;
+  max-width:600px;
+  margin-bottom:40px;
+}
+
+button{
+  padding:15px 25px;
+  font-size:18px;
+  margin:10px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+#btn3{
+  background:#ff4d4d;
+  position:relative;
+}
+
+#btn5{
+  background:#4caf50;
+}
+
+#msg{
+  margin-top:20px;
+  font-size:22px;
+  opacity:0;
+  transition:0.3s;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Я устал от этих вин серверов джумла и виртуал бокса который не может нормально работать я знаю способ лучше и все совпадает требованиям по ссылке с моим именем</h1>
+
+  <button id="btn3">Поставить 3</button>
+  <button id="btn5">Поставить 5</button>
+
+  <div id="msg">Спасибо я рад</div>
+</div>
+
+<script>
+const btn3 = document.getElementById("btn3");
+const btn5 = document.getElementById("btn5");
+const msg = document.getElementById("msg");
+
+// кнопка убегает при наведении
+btn3.addEventListener("mouseenter", () => {
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 100);
+
+  btn3.style.position = "absolute";
+  btn3.style.left = x + "px";
+  btn3.style.top = y + "px";
+});
+
+// кнопка 5 показывает текст
+btn5.addEventListener("click", () => {
+  msg.style.opacity = "1";
+});
+</script>
+
+</body>
+</html>
